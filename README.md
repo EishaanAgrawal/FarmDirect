@@ -149,13 +149,6 @@ Complete end-to-end user flows to verify the platform:
 
 4. **Rider Flow**: Login as Rider → View assigned delivery jobs → Verify pickup from farmer → Complete delivery with OTP confirmation.
 
-Open browser and execute the complete user journeys:
-
-1. **Consumer**: Browse marketplace → view price transparency widget → add to cart → complete checkout with simulated Razorpay → view live order tracking timeline.
-2. **Farmer**: Log in → view dashboard KPIs & revenue chart → fulfill new order → advance fulfillment status → review payout ledger.
-3. **Admin**: Log in → verify new farmer application → inspect platform GMV & 5% commission → manage user accounts.
-4. **Rider**: Log in → view assigned delivery jobs → verify pickup from farmer → complete delivery with OTP confirmation.
-
 ---
 
 
