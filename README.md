@@ -42,28 +42,29 @@ The platform features **AI-powered demand forecasting**, **map-based logistics r
 - **User Management**: View all consumer and farmer accounts with suspension / activation controls.
 - **Platform-Wide Orders**: Oversee all system shipments and manage category taxonomies.
 
-### 🔮 4. AI Demand Forecasting ( `GET /api/forecast` ):
-
-- Predicts upcoming demand for produce categories using historical order patterns.
-- Helps farmers plan harvests proactively to reduce wastage and unsold stock.
-
-### 🗺️ 5. Logistics & Route Optimization ( `GET /api/logistics`, `GET /api/routes` ):
-
-- Map-based delivery route planning using **Leaflet** + **OpenStreetMap Nominatim** geocoding.
-- Haversine distance calculation for nearest-farm matching.
-- Progressive geocoding fallback to resolve imprecise address strings.
-
-### 🔔 6. Notification System ( `GET /api/notifications` ):
-
-- Real-time in-app notification dispatch for order status changes and farmer approvals.
-
-### 🚚 7. Rider / Driver Portal ( `GET /api/logistics/jobs` ):
+### 🚚 4. Rider / Driver Portal ( `GET /api/logistics/jobs` ):
 
 - **Driver Dashboard**: View all assigned logistics jobs with order details, customer info, and delivery address.
 - **Verify Pickup**: Mark an order as picked up from the farmer — updates job status to `IN_TRANSIT`.
 - **OTP-Based Delivery Confirmation**: Complete delivery by entering a consumer OTP — marks order as `DELIVERED`.
 - **Driver Verification**: Admin can verify / approve rider accounts before they can accept jobs.
 - **Vehicle Assignment**: Each driver is linked to a vehicle; admin assigns driver + vehicle to a logistics job.
+
+### 🔮 5. AI Demand Forecasting ( `GET /api/forecast` ):
+
+- Predicts upcoming demand for produce categories using historical order patterns.
+- Helps farmers plan harvests proactively to reduce wastage and unsold stock.
+
+### 🗺️ 6. Logistics & Route Optimization ( `GET /api/logistics`, `GET /api/routes` ):
+
+- Map-based delivery route planning using **Leaflet** + **OpenStreetMap Nominatim** geocoding.
+- Haversine distance calculation for nearest-farm matching.
+- Progressive geocoding fallback to resolve imprecise address strings.
+
+### 🔔 7. Notification System ( `GET /api/notifications` ):
+
+- Real-time in-app notification dispatch for order status changes and farmer approvals.
+
 
 ---
 
