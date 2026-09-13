@@ -108,7 +108,25 @@ The platform features **AI-powered demand forecasting**, **map-based logistics r
 
 ---
 
-## 🚀 Quick Start Guide
+## 🚀 Live Demo — Already Deployed!
+
+> **No setup needed.** The app is live and fully functional on Vercel.
+
+| Service | URL |
+| :--- | :--- |
+| 🌐 **Web Application** | **https://farmer-steel.vercel.app/** |
+| 🔑 **Login Page** | https://farmer-steel.vercel.app/login |
+| 🛒 **Marketplace** | https://farmer-steel.vercel.app/shop |
+| 👑 **Admin Dashboard** | https://farmer-steel.vercel.app/admin/dashboard |
+| 🚜 **Farmer Dashboard** | https://farmer-steel.vercel.app/farmer/dashboard |
+
+> 💡 Use the **1-click demo login buttons** on the `/login` page to instantly access any role.
+
+---
+
+## 🛠️ Local Development (For Contributors)
+
+If you want to run the project locally for development:
 
 ### Prerequisites
 
@@ -120,15 +138,13 @@ The platform features **AI-powered demand forecasting**, **map-based logistics r
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/<your-username>/farmdirect.git
-cd farmdirect
+git clone https://github.com/EishaanAgrawal/hui.git
+cd hui
 ```
 
 ---
 
 ### 2. Install All Dependencies
-
-From the project root (installs both backend & frontend):
 
 ```bash
 npm run install:all
@@ -196,6 +212,7 @@ cd frontend && npm run dev
 ```
 
 ---
+
 
 ## 🧪 Verification & Testing
 
