@@ -238,66 +238,8 @@ Base URL: `http://localhost:5000/api`
 | `GET` | `/notifications` | In-app notification feed |
 | `POST` | `/upload` | File / image upload handler |
 
----
 
-## 📁 Repository Structure
 
-```
-farmdirect/
-├── backend/
-│   ├── prisma/
-│   │   ├── schema.prisma        # DB models — User, Product, Order, Payout, etc.
-│   │   └── seed.ts              # Rich realistic seed dataset (demo accounts + data)
-│   ├── src/
-│   │   ├── config/              # Database client, env & constants
-│   │   ├── controllers/         # REST API request handlers (14 controllers)
-│   │   │   ├── auth.controller.ts
-│   │   │   ├── product.controller.ts
-│   │   │   ├── order.controller.ts
-│   │   │   ├── farmer.controller.ts
-│   │   │   ├── admin.controller.ts
-│   │   │   ├── forecast.controller.ts
-│   │   │   ├── logistics.controller.ts
-│   │   │   └── ...
-│   │   ├── middleware/          # JWT auth, RBAC guards, error handlers, validation
-│   │   ├── routes/              # Express route definitions (16 route files)
-│   │   ├── services/            # Razorpay payment, location geocoding, notifications
-│   │   │   └── location.service.ts   # OSM Nominatim + Haversine distance
-│   │   ├── validators/          # Zod validation schemas per entity
-│   │   ├── utils/               # Shared utility helpers
-│   │   ├── app.ts               # Express app setup (CORS, Morgan, routes)
-│   │   └── server.ts            # Server entrypoint
-│   ├── .env.example             # Environment variable template
-│   └── package.json
-│
-├── frontend/
-│   ├── src/
-│   │   ├── components/          # Reusable UI components, layout & widgets
-│   │   ├── context/             # AuthContext, CartContext (React Context API)
-│   │   ├── pages/               # Public, Consumer, Farmer & Admin page views
-│   │   │   ├── admin/           # AdminUsers, AdminDashboard, FarmerVerification
-│   │   │   ├── farmer/          # FarmerDashboard, Inventory, Payouts
-│   │   │   └── consumer/        # Shop, Cart, Checkout, OrderTracking
-│   │   ├── router/              # App routing & RBAC-protected route guards
-│   │   ├── services/            # Axios API client (service layer per entity)
-│   │   ├── types/               # TypeScript interfaces & shared types
-│   │   └── index.css            # Custom design tokens & Tailwind base styles
-│   ├── tailwind.config.js
-│   ├── vite.config.ts
-│   └── package.json
-│
-├── docs/
-│   ├── API_DOCUMENTATION.md     # Full REST endpoint specification
-│   ├── DATABASE.md              # ER diagram & schema details
-│   └── DEPLOYMENT.md            # Production deployment guide
-│
-├── docker-compose.yml           # Containerized multi-service setup
-├── vercel.json                  # Vercel frontend deployment config
-├── package.json                 # Monorepo root script runner
-└── README.md
-```
-
----
 
 ## 🗄️ Database Schema Overview
 
