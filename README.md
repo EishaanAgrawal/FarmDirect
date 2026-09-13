@@ -57,6 +57,14 @@ The platform features **AI-powered demand forecasting**, **map-based logistics r
 
 - Real-time in-app notification dispatch for order status changes and farmer approvals.
 
+### 🚚 7. Rider / Driver Portal ( `GET /api/logistics/jobs` ):
+
+- **Driver Dashboard**: View all assigned logistics jobs with order details, customer info, and delivery address.
+- **Verify Pickup**: Mark an order as picked up from the farmer — updates job status to `IN_TRANSIT`.
+- **OTP-Based Delivery Confirmation**: Complete delivery by entering a consumer OTP — marks order as `DELIVERED`.
+- **Driver Verification**: Admin can verify / approve rider accounts before they can accept jobs.
+- **Vehicle Assignment**: Each driver is linked to a vehicle; admin assigns driver + vehicle to a logistics job.
+
 ---
 
 ## 🏛️ System Architecture
@@ -103,6 +111,7 @@ The platform features **AI-powered demand forecasting**, **map-based logistics r
 | **Admin** | `admin@farmdirect.com` | `Admin@123` | `/admin/dashboard` (Full platform oversight) |
 | **Farmer** | `farmer1@farmdirect.com` | `Farmer@123` | `/farmer/dashboard` (Green Valley Organics) |
 | **Consumer** | `consumer1@farmdirect.com` | `User@123` | `/shop` (Regular shopper account) |
+| **Rider** | `rider1@farmdirect.com` | `Rider@123` | `/driver/dashboard` (Ramesh Delivery — verified rider) |
 
 > 💡 Quick 1-click login buttons are available directly on the `/login` page.
 
@@ -119,6 +128,7 @@ The platform features **AI-powered demand forecasting**, **map-based logistics r
 | 🛒 **Marketplace** | https://farmer-steel.vercel.app/shop |
 | 👑 **Admin Dashboard** | https://farmer-steel.vercel.app/admin/dashboard |
 | 🚜 **Farmer Dashboard** | https://farmer-steel.vercel.app/farmer/dashboard |
+| 🚚 **Rider Dashboard** | https://farmer-steel.vercel.app/driver/dashboard |
 
 > 💡 Use the **1-click demo login buttons** on the `/login` page to instantly access any role.
 
@@ -141,6 +151,7 @@ Open browser and execute the complete user journeys:
 1. **Consumer**: Browse marketplace → view price transparency widget → add to cart → complete checkout with simulated Razorpay → view order tracking timeline.
 2. **Farmer**: Log in → view dashboard analytics → fulfill new order → update stock.
 3. **Admin**: Log in → verify new farmer application → inspect platform GMV & analytics.
+4. **Rider**: Log in → view assigned delivery jobs → verify pickup from farmer → complete delivery with OTP confirmation.
 
 ---
 
@@ -212,13 +223,24 @@ Base URL: `http://localhost:5000/api`
 | `PUT` | `/admin/farmers/:id/status` | Approve / reject / suspend farmer |
 | `GET` | `/admin/users` | Platform user directory |
 
+### Rider & Logistics
+
+| Method | Endpoint | Description |
+| :--- | :--- | :--- |
+| `GET` | `/logistics/jobs` | List all logistics jobs (driver sees only their own) |
+| `PUT` | `/logistics/jobs/:id/assign` | Assign driver + vehicle to a job *(Admin)* |
+| `POST` | `/logistics/jobs/:id/verify-pickup` | Rider verifies pickup → status `IN_TRANSIT` |
+| `POST` | `/logistics/jobs/:id/complete-delivery` | Rider completes delivery with OTP → `DELIVERED` |
+| `GET` | `/logistics/vehicles` | List all registered vehicles |
+| `GET` | `/logistics/drivers` | List all registered drivers |
+| `PUT` | `/logistics/drivers/:id/verify` | Admin verifies a driver account |
+
 ### Advanced Modules
 
 | Method | Endpoint | Description |
 | :--- | :--- | :--- |
 | `GET/POST` | `/forecast/*` | AI demand forecasting for produce categories |
 | `GET/POST` | `/routes/*` | Delivery route planning & optimization |
-| `GET/POST` | `/logistics/*` | Logistics provider management |
 | `GET` | `/notifications` | In-app notification feed |
 | `POST` | `/upload` | File / image upload handler |
 
