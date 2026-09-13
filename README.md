@@ -139,22 +139,15 @@ The platform features **AI-powered demand forecasting**, **map-based logistics r
 
 ## 🧪 Verification & Testing
 
-Complete end-to-end user flows to verify the platform:
-
-1. **Consumer Flow**: Login as Consumer → Browse produce → Add items to Cart → Proceed to Checkout → Simulate Razorpay Payment → View live Order Tracking Timeline.
-
-2. **Farmer Flow**: Login as Farmer → View updated Dashboard KPIs & revenue chart → Advance Order fulfillment status → Review Payout Ledger.
-
-3. **Admin Flow**: Login as Admin → View platform GMV & 5% commission revenue → Approve pending Farmer Verification → Manage user accounts.
-
 Open browser and execute the complete user journeys:
 
-1. **Consumer**: Browse marketplace → view price transparency widget → add to cart → complete checkout with simulated Razorpay → view order tracking timeline.
-2. **Farmer**: Log in → view dashboard analytics → fulfill new order → update stock.
-3. **Admin**: Log in → verify new farmer application → inspect platform GMV & analytics.
+1. **Consumer**: Browse marketplace → view price transparency widget → add to cart → complete checkout with simulated Razorpay → view live order tracking timeline.
+2. **Farmer**: Log in → view dashboard KPIs & revenue chart → fulfill new order → advance fulfillment status → review payout ledger.
+3. **Admin**: Log in → verify new farmer application → inspect platform GMV & 5% commission → manage user accounts.
 4. **Rider**: Log in → view assigned delivery jobs → verify pickup from farmer → complete delivery with OTP confirmation.
 
 ---
+
 
 ## 🧾 API Contract Reference
 
